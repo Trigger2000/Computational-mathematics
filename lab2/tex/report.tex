@@ -1,0 +1,65 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel} %локализация
+\usepackage[left=2cm,right=2cm, top=2cm,bottom=2cm, bindingoffset=0cm] {geometry}
+\usepackage{graphicx}%Вставка картинок правильная
+\usepackage{float}%"Плавающие" картинки
+\usepackage{wrapfig}%Обтекание фигур (таблиц, картинок и прочего)
+\usepackage{fancybox,fancyhdr} %колонтитулы
+\usepackage{amsmath, amsfonts, amssymb, amsthm, mathtools} %математика
+
+%\usepackage[12pt]{extsizes} % размер шрифта
+
+\begin{document}
+	\begin{center}
+		\textbf{Отчет по задаче 2.10.6(к). Трубачев Илья}
+	\end{center}
+
+	\begin{equation*}
+	A = 
+	\begin{cases}
+	a_{11}x_1+a_{12}x_2+...+a_{1n}x_n = f_1 \\
+	\hspace{2cm} ... \\
+	a_{n1}x_1+a_{n2}x_2+...+a_{nn}x_n = f_n
+	\end{cases} \\
+	n=10, a_{ii} = 1, a_{ij} = \frac{1}{i+j} (i \neq j), f_i = 1/i
+	\end{equation*}
+	
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Гаусс & Невязка & Зейдель & Невязка \\
+		\hline
+		0.919077 & 0 & 0.919084 & -6.7782e-06 \\
+		\hline
+		0.17554 & -1.11022e-16 & 0.175542 & -3.95048e-06 \\
+		\hline
+		0.0639348 & -5.55112e-17 & 0.0639353 & -2.08945e-06 \\
+		\hline
+		0.0272748 & 0 & 0.0272744 & -1.04105e-06 \\
+		\hline
+		0.0114235 & -2.77556e-17 & 0.0114228 & -4.66341e-07 \\
+		\hline
+		0.00351084 & -2.77556e-17 & 0.00351003 & -1.63768e-07 \\
+		\hline
+		-0.000789958 & 0 & -0.000790774 & -1.93097e-08 \\
+		\hline
+		-0.0032508 & 0 & -0.00325156 & 3.27787e-08 \\
+		\hline
+		-0.00469788 & 0 & -0.00469855 & 3.13829e-08 \\
+		\hline
+		-0.00555374 & -2.77556e-17 & -0.00555431 & 0 \\
+		\hline
+	\end{tabular}
+	\end{center}
+
+	Собственные значения:
+	\[ \lambda_{min} = 0.65796 \hspace{0.5cm} \lambda_{max} = 2.04836\]
+	
+	Число обусловленности матрицы А по нормам:
+	\[ \mu_1 = \mu_2 = 5.63361 \hspace{0.5cm} \mu_3 = 3.1132 \]
+	
+	Критерий останова итераций метода Зейдела: невязка не превышает 0.00001 (для каждого корня).
+\end{document}
