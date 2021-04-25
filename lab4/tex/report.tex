@@ -1,0 +1,78 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel} %локализация
+\usepackage[left=2cm,right=2cm, top=2cm,bottom=2cm, bindingoffset=0cm] {geometry}
+\usepackage{graphicx}%Вставка картинок правильная
+\usepackage{float}%"Плавающие" картинки
+\usepackage{wrapfig}%Обтекание фигур (таблиц, картинок и прочего)
+\usepackage{fancybox,fancyhdr} %колонтитулы
+\usepackage{amsmath, amsfonts, amssymb, amsthm, mathtools} %математика
+
+%\usepackage[12pt]{extsizes} % размер шрифта
+
+\begin{document}
+	\begin{center}
+		\textbf{Отчет по задаче 8.11.4. Трубачев Илья}
+	\end{center}
+
+	\begin{equation*}
+	\begin{cases}
+	x' = z \\
+	y' = u \\
+	z' = -\frac{x}{(x^2 + y^2)^{3/2}} \\
+	u' = -\frac{y}{(x^2 + y^2)^{3/2}}
+	\end{cases} \\
+	0 < t < 20, x(0) = 0.5, y(0) = z(0) = 0, u(0) = 1.73
+	\end{equation*}
+	
+	Использованы методы Рунге-Кутты с соответствующими таблицами Бутчера:
+	\begin{center}
+	\begin{tabular}{|c|c|}
+		\hline
+		0 & 0 \\
+		\hline
+		& 1 \\
+		\hline
+	\end{tabular}
+	\bigskip
+	\begin{tabular}{|c|c|c|}
+		\hline
+		0 &  &  \\
+		\hline
+		1/2 & 1/2 &  \\
+		\hline
+		& 0 & 1 \\
+		\hline
+	\end{tabular}
+	\bigskip
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		0 &  &  &  \\
+		\hline
+		1/2 & 1/2 &  &  \\
+		\hline
+		1 & 0 & 1 &  \\
+		\hline
+		& 1/6 & 4/6 & 1/6 \\
+		\hline
+	\end{tabular}
+	\bigskip
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		0 &  &  &  &  \\
+		\hline
+		1/2 & 1/2 &  &  &  \\
+		\hline
+		1/2 & 0 & 1/2 &  &  \\
+		\hline
+		1 & 0 & 0 & 1 &  \\
+		\hline
+		& 1/6 & 2/6 & 2/6 & 1/6 \\
+		\hline
+	\end{tabular}
+	\end{center}
+	
+	Построены графики u(t) и траектория f(x, y, z) = 0 для различных значений шага интегрирования. Видно, что точность построения графиков зависит от шага интегрирования: для наглядности можно сравнить графики, построенные методом РК первого порядка для шага 0.5 и 0.001. 
+\end{document}
