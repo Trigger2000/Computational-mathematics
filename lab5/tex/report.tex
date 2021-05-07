@@ -1,0 +1,46 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel} %локализация
+\usepackage[left=2cm,right=2cm, top=2cm,bottom=2cm, bindingoffset=0cm] {geometry}
+\usepackage{graphicx}%Вставка картинок правильная
+\usepackage{float}%"Плавающие" картинки
+\usepackage{wrapfig}%Обтекание фигур (таблиц, картинок и прочего)
+\usepackage{fancybox,fancyhdr} %колонтитулы
+\usepackage{amsmath, amsfonts, amssymb, amsthm, mathtools} %математика
+
+%\usepackage[12pt]{extsizes} % размер шрифта
+
+\begin{document}
+	\begin{center}
+		\textbf{Отчет по задаче 10.9.13. Трубачев Илья}
+	\end{center}
+
+	\begin{equation*}
+	\begin{cases}
+	x' = x(2\alpha_1 - 0.5x - \alpha_1^2\alpha_2^{-2}y) \\
+	y' = y(2\alpha_2 - 0.5y - \alpha_2^2\alpha_1^{-2}x) \\
+	z' = \varepsilon(2 - 2\alpha_1\alpha_2^{-2}y) \\
+	u' = \varepsilon(2 - 2\alpha_2\alpha_1^{-2}x)
+	\end{cases} \\
+	0 < t < 2000, 0 < x_0 < 40, 0 < y_0 < 40, \alpha_{10} << 1, \alpha_{20} = 10
+	\end{equation*}
+	
+	\begin{equation*}
+	\begin{cases}
+	x' = x(2\alpha_1 - 0.5x - \alpha_1^3\alpha_2^{-3}y) \\
+	y' = y(2\alpha_2 - 0.5y - \alpha_2^3\alpha_1^{-3}x) \\
+	z' = \varepsilon(2 - 3\alpha_1^2\alpha_2^{-3}y) \\
+	u' = \varepsilon(2 - 2\alpha_2^2\alpha_1^{-3}x)
+	\end{cases} \\
+	0 < t < 2000, 0 < x_0 < 40, 0 < y_0 < 40, \alpha_{10} << 1, \alpha_{20} = 10
+	\end{equation*}
+	
+	Использован следующий метод Розенброка:
+	\begin{equation*}
+		(E - atB - bt^2B^2)\frac{u_{n+1} - u_n}{t} = f[u_n + ctf(u_n)], a = 1.077, b = -0.372, c = -0,577
+	\end{equation*}
+	
+	Построены графики x(t), y(t), $\alpha_1(t)$, $ \alpha_2(t)$. Была выявлена сильная зависимость задачи от начальных условий. Использованные начальные условия для моделирования находятся в файле rozenbrok.h
+\end{document}
